@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RGB</title>
+</head>
+<body>
+    <div id="container_RGB">
+        <h1>
+            <span id="R" onMouseOver="javascript:changeBGcolor('#ff0000')" onMouseOut="javascript:changeBGcolor('#fff')">R</span>
+            <span id="G" onMouseOver="javascript:changeBGcolor('#00ff00')" onMouseOut="javascript:changeBGcolor('#fff')">G</span>
+            <span id="B" onMouseOver="javascript:changeBGcolor('#0000ff')" onMouseOut="javascript:changeBGcolor('#fff')">B</span>
+        </h1>
+        </div>
+        
+        <script type="text/javascript">
+        function changeBGcolor(color) {
+            document.bgColor = color;
+        }
+        </script>
+
+
+    <div class="tilbake">
+        <a href="rgb.html"><img alt="Tilbake knapp" src="go_back.png"> </a>
+    </div>
+    
+</body>
+</html>

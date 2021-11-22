@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+}
+#toppen{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('triangles-1430105.png');
+    /*Jeg prøvde å bruke filter: brightness(50%), men dette så ikke bra ut fordi de hvite linjene stakk ut fra bildet*/
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    width: 85%;
+    display: flex;
+    margin: auto;
+    padding: 3% 6%;
+    align-items:center; 
+    justify-content:space-between;
+}
+.navbar{
+    flex:1;
+    text-align: right;
+}
+@media only screen and (max-width: 900px) {
+    .navbar{
+        text-align: center;
+    }
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 8px 12px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -15%;
+    transition: 0.5s;
+    /** Legger inn en hover funksjon som gir en blå linje under det man har musen på**/
+}
+.navbar ul li:hover::after{
+    width: 100%;
+    /**gjør at den blå streken under navbaren faktisk fungerer**/
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+#intro_tekst{
+    color: #fff;
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    /*Nå er intro teksten litt over midten på nettsiden*/
+
+}
+
+@media only screen and (max-width: 900px) {
+    #intro_tekst{
+        width: 60%;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+#intro_tekst h1{
+    font-size: 10vw;
+}
+#intro_tekst p{
+    font-size: 100%;
+}
+.container{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+        width: 80%;
+        height: 40%;
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+        grid-template-rows: repeat(4, 25%);
+        /*1fr betyr 1 fraction av totale pixler, hver row er nå 100% av høyden til diven.*/
+        grid-template-areas: 
+        "t t t t t"
+        "ml ml mr mr mr" 
+        "ml ml mr mr mr  " 
+        "b b b b b";
+        /*her bestemmer man hvordan rutenettet ser ut */
+        padding: 10px;
+    
+        margin: 20px auto;
+        /*padding gir rom mellom ytre border og elemente i containeren, margin gjør rutenettet midtstilt*/
+}
+
+@media only screen and (max-width: 900px) {
+    .container{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+  }
+
+
+.top{
+    grid-area: t;
+    background-image: url('paints_1.jpg');
+    background-position: center;
+    background-size:cover;
+    border-radius: 15px;
+    margin: 1%;
+    font-size:300%;
+    text-decoration: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform .2s; 
+    height: 1fr;
+}
+.middle_left{
+    grid-area: ml;
+    background-image: url('painting-1914111_1920.png');
+    background-position: center;
+    background-size:cover;
+    border-radius: 15px;
+    margin: 1%;
+    font-size:300%;
+    text-decoration: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform .2s;
+}
+
+.middle_right{
+    grid-area: mr;
+    background-image: url('colorsplash_1.jpeg');
+    background-position: center;
+    background-size:cover;
+    border-radius: 15px;
+    margin: 1%;
+    font-size:300%;
+    text-decoration: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform .2s; 
+    cursor: pointer;
+}
+.bottom{
+    grid-area: b;
+    background-image: url('colorful-182220_1920.jpg');
+    background-position: center;
+    background-size:cover;
+    border-radius: 15px;
+    margin: 1%;
+    font-size:300%;
+    text-decoration: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform .2s; 
+    cursor: pointer;
+    
+}
+@media only screen and (max-width: 900px) {
+    .top, .middle_right, .middle_left, .bottom {
+      font-size: 200%;
+    }
+  }
+.middle_left:hover, .middle_right:hover, .top:hover, .bottom:hover{
+    transform: scale(1.2);
+  }
+  
+
+#container_RGB h1 {
+    font-size: 20vw;
+    text-align: center;
+}
+
+#container_RGB {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#R {
+    color: #ff0000;
+}
+
+#G {
+    color: #00ff00;
+}
+
+#B {
+    color: #0000ff;
+}
+
+#R:hover, #G:hover, #B:hover{
+    color: #000;
+}
+
+.grid_container-hsl{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(4, 25%);
+    /*1fr betyr 1 fraction av totale pixler*/
+    grid-template-areas: 
+    "to to to to to"
+    "mid-l mid-l mid-l mid-r mid-r" 
+    "mid-l mid-l mid-l mid-r mid-r" 
+    "bo bo bo bo bo";
+    /*her bestemmer man hvordan rutenettet ser ut */
+    padding: 10px;
+
+    margin: 20px auto;
+    /*padding gir rom mellom ytre border og elemente i containeren, margin gjør rutenettet midtstilt*/
+}
+@media only screen and (max-width: 900px) {
+    .grid_container-hsl{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+  }
+
+.grid_container-hsl>div {
+    background-color: rgba(149, 159, 192, 0.459);
+    margin: 5px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.top-hsl{
+    grid-area: to
+}
+.middle_left-hsl{
+ grid-area: mid-l;
+
+}
+
+.middle_right-hsl{
+    grid-area: mid-r;
+}
+.middle_right-hsl img{
+    height: 100%;
+    width: 100%;
+    border-radius:20px;
+}
+.bottom-hsl{
+    grid-area: bo;
+}
+.top-hsl, .middle_right-hsl, .middle_left-hsl, .bottom-hsl{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 130%;
+}
+@media only screen and (max-width: 900px) {
+    .top-hsl, .middle_right-hsl, .middle_left-hsl, .bottom-hsl {
+        font-size: 90%;
+    }
+  }
+table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: minmax(500px, 1000%);
+    font-size: 150%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin: 5% auto;
+    text-align: center;
+
+}
+@media only screen and (max-width: 900px) {
+    table {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+    }
+  }
+th,td{
+    border:1px solid black;
+    padding: 5%;
+}
+td{
+    cursor: pointer;
+}
+.tilbake a img{
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+
+}
